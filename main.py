@@ -1,7 +1,6 @@
 import sys
 from random import randint
 
-from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
@@ -31,7 +30,7 @@ class MainWindow(QMainWindow, Ui_MainWindow):
         qp.end()
 
     def draw_circle(self, qp):
-        qp.setBrush(QColor('yellow'))
+        qp.setBrush(QColor.fromHsv(randint(0, 359), randint(0, 255),  randint(0, 255),  randint(0, 255),))
         diameter = randint(70, 200)
         start = 60
         qp.drawEllipse(start, start, start + diameter, start + diameter)
