@@ -5,11 +5,13 @@ from PyQt5 import uic
 from PyQt5.QtGui import QPainter, QColor
 from PyQt5.QtWidgets import QMainWindow, QApplication
 
+from circle_window import Ui_MainWindow
 
-class MainWindow(QMainWindow):
+
+class MainWindow(QMainWindow, Ui_MainWindow):
     def __init__(self):
         super().__init__()
-        uic.loadUi('01.ui', self)
+        self.setupUi(self)
         self.init_ui()
         self._should_draw = False
 
